@@ -1,3 +1,5 @@
+import java.awt.*;
+
 /**
  * This class represents a simple picture. You can draw the picture using
  * the draw method. But wait, there's more: being an electronic picture, it
@@ -15,6 +17,7 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Square grass;
 
     /**
      * Constructor for objects of class Picture
@@ -27,7 +30,7 @@ public class Picture
     /**
      * Draw this picture.
      */
-    public void draw()
+    public void draw() throws InterruptedException
     {
         wall = new Square();
         wall.moveHorizontal(-140);
@@ -47,13 +50,21 @@ public class Picture
         roof.moveHorizontal(20);
         roof.moveVertical(-60);
         roof.makeVisible();
-
+        
+        grass = new Square();
+        grass.changeColor("green");
+        grass.changeSize(500);
+        grass.moveHorizontal(-310);
+        grass.moveVertical(140);
+        grass.makeVisible();
+        
         sun = new Circle();
         sun.changeColor("yellow");
         sun.moveHorizontal(100);
         sun.moveVertical(-40);
         sun.changeSize(80);
         sun.makeVisible();
+        sun.slowMoveVertical(130);
     }
 
     /**
