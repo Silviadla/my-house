@@ -61,12 +61,21 @@ public class Picture
         sun = new Circle();
         sun.changeColor("yellow");
         sun.moveHorizontal(100);
-        sun.moveVertical(-40);
+        sun.moveVertical(80);
         sun.changeSize(80);
         sun.makeVisible();
-        sun.slowMoveVertical(130);
+        sun.slowMoveVertical(-100);
+    }
+    /**
+     * Change the sun goes down
+     */
+    public void atardecer() 
+    {
+     sun.slowMoveVertical(100); 
+     
     }
 
+    
     /**
      * Change this picture to black/white display
      */
